@@ -10,7 +10,7 @@ required [hsl-experimental](https://github.com/hhvm/hsl-experimental)
 ## Install
 
 ```bash
-$ hhvm $(which composer) require ytake/hack-http-server-request-handlers-interfaces
+$ hhvm $(which composer) require nazg/http-server-request-handler
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Golang style
 
 ```go
 func middleware(next http.HandlerFunc) http.HandlerFunc {
-  return func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Hello World, %s", r.RequestURI)
 		next.ServeHTTP(w, r)
 	}
