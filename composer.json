@@ -1,0 +1,37 @@
+{
+  "name": "nazg/http-server-request-handler",
+  "description": "PSR-15 like HTTP Server Request Handler Interface",
+  "keywords": [
+    "hhvm",
+    "hack",
+    "http-handlers",
+    "request",
+    "server",
+    "middleware"
+  ],
+  "homepage": "https://github.com/nazg-hack/http-server-request-handler",
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Yuuki Takezawa",
+      "email": "yuuki.takezawa@comnect.jp.net"
+    }
+  ],
+  "require": {
+    "hhvm": ">=3.30.0",
+    "hhvm/hhvm-autoload": "^1.7",
+    "hhvm/hsl-experimental": "^3.30.0",
+    "facebook/hack-http-request-response-interfaces": "^0.1"
+  },
+  "require-dev": {
+    "hhvm/hhast": "^3.30.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nazg\\Http\\Server\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}

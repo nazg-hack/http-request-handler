@@ -1,0 +1,8 @@
+{
+	"roots": [
+		"src/"
+	],
+	"namespaceAliases": {
+		"HHAST": "Facebook\\HHAST\\Linters"
+	}
+}
