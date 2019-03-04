@@ -1,5 +1,3 @@
-<?hh // strict
-
 /**
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -12,7 +10,7 @@
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the MIT license.
  *
- * Copyright (c) 2018 Yuuki Takezawa
+ * Copyright (c) 2018-2019 Yuuki Takezawa
  *
  */
 namespace Nazg\Http\Server;
@@ -22,20 +20,24 @@ use type Facebook\Experimental\Http\Message\ResponseInterface;
 use type Facebook\Experimental\Http\Message\ServerRequestInterface;
 
 /**
- * An HTTP request handler process a HTTP request and produces an HTTP response.
- * This interface defines the methods require to use the request handler.
+ * An HTTP middleware component participates in processing an HTTP message,
+ * either by acting on the request or the response. This interface defines the
+ * methods required to use the middleware.
  */
-interface RequestHandlerInterface {
+interface MiddlewareInterface {
 
   /**
-   * Handle the request and return a response.
-   * @param WriteHandle $writeHandle
-   * @param ServerRequestInterface $request
+   * Process an incoming server request and return a response, optionally delegating
+   * response creation to a handler.
    *
+   * @param WriteHandle $handler
+   * @param ServerRequestInterface $request
+   * @param RequestHandlerInterface $handler
    * @return ResponseInterface
    */
-  public function handle(
+  public function process(
     WriteHandle $writeHandle,
-    ServerRequestInterface $request
+    ServerRequestInterface $request,
+    RequestHandlerInterface $handler
   ): ResponseInterface;
 }
