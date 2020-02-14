@@ -15,7 +15,7 @@
  */
 namespace Nazg\Http\Server;
 
-use type HH\Lib\Experimental\IO\WriteHandle;
+use type HH\Lib\Experimental\IO\CloseableWriteHandle;
 use type Facebook\Experimental\Http\Message\ResponseInterface;
 use type Facebook\Experimental\Http\Message\ServerRequestInterface;
 
@@ -33,7 +33,7 @@ interface RequestHandlerInterface {
    * @return ResponseInterface
    */
   public function handle(
-    WriteHandle $writeHandle,
+    CloseableWriteHandle $writeHandle,
     ServerRequestInterface $request
   ): ResponseInterface;
 }

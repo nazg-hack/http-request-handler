@@ -15,7 +15,7 @@
  */
 namespace Nazg\Http\Server;
 
-use type HH\Lib\Experimental\IO\WriteHandle;
+use type HH\Lib\Experimental\IO\CloseableWriteHandle;
 use type Facebook\Experimental\Http\Message\ResponseInterface;
 use type Facebook\Experimental\Http\Message\ServerRequestInterface;
 
@@ -36,7 +36,7 @@ interface MiddlewareInterface {
    * @return ResponseInterface
    */
   public function process(
-    WriteHandle $writeHandle,
+    CloseableWriteHandle $writeHandle,
     ServerRequestInterface $request,
     RequestHandlerInterface $handler
   ): ResponseInterface;
