@@ -15,7 +15,7 @@
  */
 namespace Nazg\Http\Server;
 
-use type HH\Lib\Experimental\IO\CloseableWriteHandle;
+use type HH\Lib\IO\CloseableWriteHandle;
 use type Facebook\Experimental\Http\Message\ResponseInterface;
 use type Facebook\Experimental\Http\Message\ServerRequestInterface;
 
